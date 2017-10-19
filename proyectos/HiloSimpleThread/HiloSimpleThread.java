@@ -1,4 +1,4 @@
-package com.geekstorming.hilosimplethread;
+package com.geekstorming.HiloSimpleThread;
 
 class HiloHolaMundo extends Thread {
 	
@@ -6,18 +6,7 @@ class HiloHolaMundo extends Thread {
 	HiloHolaMundo()
 	{
 		super("Hilo HolaMundo2, hereda de Thread, con prioridad y padre: ");
-		System.out.println("Creando hilo nuevo..." + hilo);
-	}
-	
-	// Implementando join() al hilo hijo
-	// Así hilo hijo acaba antes que hilo padre (main)
-	public void Espera()
-	{
-		try {
-			hilo.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		System.out.println("Creando hilo nuevo...");
 	}
 	
 	// Instrucciones del hilo
@@ -40,7 +29,7 @@ class HiloHolaMundo extends Thread {
 	}
 }
 
-public class HolaMundo {
+public class HiloSimpleThread {
 
 	public static void main(String[] args) {
 		
@@ -50,8 +39,13 @@ public class HolaMundo {
 		
 		// Creando a Hilo HolaMundo
 		hiloHijo = new HiloHolaMundo();
-    hiloHijo.start();
-		hiloHijo.Espera();
+		hiloHijo.start();
+		
+		try {
+			hiloHijo.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("Hilo principal (main) finalizando");
 
