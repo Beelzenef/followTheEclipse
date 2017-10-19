@@ -11,4 +11,6 @@ Ejercicios de Java + Eclipse
 
 ### Operando con hilos
 
-* [Primer hilo, Hola Mundo](proyectos/HiloHolaMundo)
+* [Primer hilo, implementando interfaz Runnable](proyectos/HiloHolaMundo)
+* [Hilo hijo heredando de Clase Thread](proyectos/HiloSimpleThread)
+* [Kill||Interrupt a un hilo hijo (desde consola)](proyectos/ManejoHiloConsola)
