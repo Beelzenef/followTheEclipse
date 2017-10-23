@@ -13,4 +13,5 @@ Ejercicios de Java + Eclipse
 
 * [Primer hilo, implementando interfaz Runnable](proyectos/HiloHolaMundo)
 * [Hilo hijo heredando de Clase Thread](proyectos/HiloSimpleThread)
-* [Kill||Interrupt a un hilo hijo (desde consola)](proyectos/ManejoHiloConsola)
+* [Kill || Interrupt a un hilo hijo (desde consola)](proyectos/ManejoHiloConsola)
+* [Condiciones de carrera + AtomicInteger](proyectos/RaceConditions)
