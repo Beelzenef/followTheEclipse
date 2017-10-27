@@ -13,7 +13,7 @@ class Sumador extends Thread {
 	// Constructor
 	Sumador (int hasta, int id, Semaphore sem) {
 		this.cuenta = hasta;
-		this.sem = semaforo;
+		this.semaforo = sem;
 	}
 
 	// Metodos
@@ -31,18 +31,22 @@ class Sumador extends Thread {
 	@Override
 	public void run()
 	{
-		for (int i = 0; i < cuenta; i++)
+		int i = 0;
+		
+		do
 		{
 			try {
 				semaforo.acquire();
 				sumar();
+				semaforo.release();
+				i++;
 			} catch (InterruptedException e)
 			{
 				e.printStackTrace();
 			}
 
-			semaforo.release();
-		}
+			
+		} while (i < cuenta);
 	}
 }
 
