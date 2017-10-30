@@ -6,6 +6,7 @@ class DatoCompartido {
 	public static int cont2 = 0;
 	
 	static Object mutex = new Object();
+	// Si usas un solo mutex, tarda el doble
 	static Object mutex2 = new Object();
 	
 	public static void increaseCont1()
