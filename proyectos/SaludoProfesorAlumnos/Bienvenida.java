@@ -16,7 +16,9 @@ public class Bienvenida {
 		while (!comienzaClase) {
 			try {
 				this.wait();
-				
+				// Evitando despertares espúreos
+				// NOPENOPENOPE System.out.println("Buenos días, soy " + nAlumno);
+				// NUNCA PONER ACCION AQUÍ, SIEMPRE FUERA DEL WHILE
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
