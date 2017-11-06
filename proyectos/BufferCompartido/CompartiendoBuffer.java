@@ -55,7 +55,12 @@ class BufferCompartido implements Buffer {
 				e.printStackTrace();
 			}
 		}
-		contadorConValorLegible = 1;
+		// Mostrando estado
+		mostrarEstado(Thread.currentThread().getName() + " consigue leer " + buffer);
+		// Cambia la guarda para productores
+		contadorConValorLegible = 0;
+		
+		notify();
 		return buffer;
 	}
 
@@ -71,8 +76,14 @@ class BufferCompartido implements Buffer {
 				e.printStackTrace();
 			}
 		}
+		// Mostrando estado
+		mostrarEstado(Thread.currentThread().getName() + " trata de escribir");
+		// Cargando buffer con el nuevo valor
 		buffer = valor;
+		// Cambiando la guarda para lectores
 		contadorConValorLegible = 1;
+		
+		notify();
 	}
 
 	@Override
@@ -136,6 +147,6 @@ class Consumidor extends Thread {
 				e.printStackTrace();
 			}
 	}
-		System.out.println(getName() + " ha terminado de consumir datos.");
+		System.out.println(getName() + " ha terminado de consumir datos, " + sumaConsumiciones + " en total");
 	}
 }
