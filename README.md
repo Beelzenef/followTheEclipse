@@ -2,14 +2,16 @@
 
 Ejercicios de Java + Eclipse
 
-## Proyectos creados
+## Hilos y procesos
+
+### Procesos
 
 * [RunProcess](proyectos/RunProcess)
 * [Ls con @](proyectos/LsConArroba)
 * [Ping a Google](proyectos/PingGoogle)
 * [Conectando procesos](proyectos/ConectarProcesos)
 
-### Operando con hilos
+### Hilos
 
 * [Primer hilo, implementando interfaz Runnable](proyectos/HiloHolaMundo)
 * [Hilo hijo heredando de Clase Thread](proyectos/HiloSimpleThread)
@@ -20,3 +22,9 @@ Ejercicios de Java + Eclipse
 * [Escribiendo en fichero de forma sincronizada](proyectos/EscribirFicheroSync)
 * [Profesor saluda, la clase comienza](proyectos/SaludoProfesorAlumnos)
 * [Compartiendo bufer, productores VS consumidores](proyectos/BufferCompartido)
+
+## Sockets
+
+### Ejercicios creados
+
+* [Primera conexión, cliente-servidor con hilo](sockets/primeraConexion)
