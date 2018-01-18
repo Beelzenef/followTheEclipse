@@ -4,6 +4,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -30,15 +32,15 @@ public class ServidorHilo extends Thread {
 		PrintWriter pw = null;
 		
 		try {
-			bo = new BufferedOutputStream(socket.getOutputStream());
 			// Activamos siempre el autoFlush para asegurarnos un canal de comm limpio
-			pw = new PrintWriter(bo, true);
+			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "utf8"), true);
 			
 			pw.println("¡Bienvenid@ a mi canal :)");
 			
 			// Espera una respuesta en forma de string desde el cliente:
-			//br = new BufferedReader(new InputStreamReader(System.in));
-			
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "utf8"));
+			System.out.print("Mensaje recibido desde el cliente: " );
+			System.out.println(br.readLine());
 			
 			
 		} catch (IOException e) {
